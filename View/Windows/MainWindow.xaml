@@ -12,5 +12,23 @@
             <RowDefinition Height="10"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="Файл">
+                <MenuItem Name="LoginMi" Click="LoginMi_Click"  Header="Вход"/>
+                <MenuItem Name="LogOutMi" Click="LogOutMi_Click" Header="Выход"/>
+                <MenuItem Name="CloseMi" Click="CloseMi_Click"  Header="Закрыть"/>
+            </MenuItem>
+
+            <MenuItem Header="Библиотека">
+                <MenuItem Name="BrowseCatalogMi" Click="BrowseCatalogMi_Click"  Header="Каталог книг"/>
+                <MenuItem Name="ManageCustomersMi" Click="ManageCustomersMi_Click"  Header="Управление читателями"/>
+                <MenuItem Name="CirculationMi" Click="CirculationMi_Click"  Header="Абонимент читателя"/>
+                <MenuItem Name="ReportsMi" Click="ReportsMi_Click"  Header="Отчёты"/>
+            </MenuItem>
+        </Menu>
+
+        <Frame Name="MainFrm" Grid.Row="2" NavigationUIVisibility="Hidden"/>
+
     </Grid>
 </Window>
