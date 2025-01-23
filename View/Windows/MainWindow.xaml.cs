@@ -11,6 +11,8 @@ namespace Bookmaster.View.Windows
         public MainWindow()
         {
             InitializeComponent();
+
+            LogOutMi.Visibility = Visibility.Collapsed;
         }
 
         private void LoginMi_Click(object sender, RoutedEventArgs e)
@@ -26,7 +28,7 @@ namespace Bookmaster.View.Windows
 
         private void CloseMi_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
         private void BrowseCatalogMi_Click(object sender, RoutedEventArgs e)
