@@ -28,7 +28,7 @@
             </MenuItem>
         </Menu>
 
-        <Frame Name="MainFrm" Grid.Row="2" NavigationUIVisibility="Hidden"/>
+        <Frame Name="MainFrm" Grid.Row="2" NavigationUIVisibility="Hidden" Margin="10"/>
 
     </Grid>
 </Window>
