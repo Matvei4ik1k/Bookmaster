@@ -14,20 +14,44 @@
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        
+
         <!--#region Панель поиска-->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        <!--#endregion-->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.ColumnSpan="3" Source="/Resousces/Images/logo.png" />
+
+            <TextBlock Grid.Row="2" Text="Название"/>
+            <TextBox Grid.Row="2" Grid.Column="2"/>
+
+            <TextBlock Grid.Row="4" Text="Автор"/>
+            <TextBox Grid.Row="4" Grid.Column="2"/>
+
+            <TextBlock Grid.Row="6" Text="Жанр"/>
+            <TextBox Grid.Row="6" Grid.Column="2"/>
+
+            <Button Grid.Row="8" Grid.Column="2" Content="Найти"/>
+        </Grid>
+    <!--#endregion-->
+        
+        
+        
     </Grid>
 </Page>
