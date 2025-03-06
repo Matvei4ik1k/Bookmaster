@@ -13,10 +13,10 @@ namespace Bookmaster.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BookmasterEntities : DbContext
+    public partial class BookMasterEntities : DbContext
     {
-        public BookmasterEntities()
-            : base("name=BookmasterEntities")
+        public BookMasterEntities()
+            : base("name=BookMasterEntities")
         {
         }
     

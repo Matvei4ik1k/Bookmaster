@@ -521,7 +521,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BookmasterEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BookMasterEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Administrator" EntityType="Self.Administrator" />
           <EntitySet Name="Author" EntityType="Self.Author" />
           <EntitySet Name="Book" EntityType="Self.Book" />
@@ -579,7 +579,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище DiachkovMatveiBookmasterModelContainer" CdmEntityContainer="BookmasterEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DiachkovMatveiBookmasterModelContainer" CdmEntityContainer="BookMasterEntities">
           <EntitySetMapping Name="Administrator">
             <EntityTypeMapping TypeName="Diachkov.Matvei.BookmasterModel.Administrator">
               <MappingFragment StoreEntitySet="Administrator">

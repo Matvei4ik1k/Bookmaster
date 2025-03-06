@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "O:\DiachkovMatvei\EntryLessons\Bookmaster\Bookmaster\Model\BookmasterModel.edmx" включено. 
+﻿// Создание кода T4 для модели "O:\DiachkovMatvei\EntryLessons\Bookmaster\Bookmaster\Model\Model1.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.
