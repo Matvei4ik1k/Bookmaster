@@ -5,6 +5,17 @@
              StartupUri="View/Windows/MainWindow.xaml">
 
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="\Styles\ButtonStyle.xaml"/>
+                <ResourceDictionary Source="\Styles\ComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="\Styles\GridSplitterStyle.xaml"/>
+                <ResourceDictionary Source="\Styles\MenuStyle.xaml"/>
+                <ResourceDictionary Source="\Styles\PasswordBoxStyle.xaml"/>
+                <ResourceDictionary Source="\Styles\TabControlStyle.xaml"/>
+                <ResourceDictionary Source="\Styles\TextBlockStyle.xaml"/>
+                <ResourceDictionary Source="\Styles\TextBoxStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
