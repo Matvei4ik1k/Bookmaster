@@ -71,8 +71,8 @@
                 <ListView Name="BookAuthorLv">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Название книги" DisplayMemberBinding = "{Binding Book.Title}"/>
-                            <GridViewColumn Header="Имя автора" DisplayMemberBinding = "{Binding Author.Name}"/>
+                            <GridViewColumn Header="Название книги" DisplayMemberBinding = "{Binding Title}"/>
+                            <GridViewColumn Header="Имя автора" DisplayMemberBinding = "{Binding Authors}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>

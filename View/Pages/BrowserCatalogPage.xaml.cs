@@ -10,18 +10,18 @@ namespace Bookmaster.View.Pages
     /// </summary>
     public partial class BrowserCatalogPage : Page
     {
-        List<BookAuthor> _bookAuthors = App.context.BookAuthor.ToList();
+        List<Book> _books = App.context.Book.ToList();
         public BrowserCatalogPage()
         {
             InitializeComponent();
-            BookAuthorLv.ItemsSource = _bookAuthors;
+            BookAuthorLv.ItemsSource = _books;
         }
 
         private void SearchBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            BookAuthorLv.ItemsSource = _bookAuthors.Where(bookAuthor =>
-            bookAuthor.Book.Title.ToLower().Contains(SearchByBookTitleTb.Text.ToLower()) &&
-            bookAuthor.Author.Name.ToLower().Contains(SearchByAuthorNameTb.Text.ToLower()));
+            BookAuthorLv.ItemsSource = _books.Where(book =>
+            book.Title.ToLower().Contains(SearchByBookTitleTb.Text.ToLower()) &&
+            book.Authors.ToLower().Contains(SearchByAuthorNameTb.Text.ToLower()));
         }
     }
 }
