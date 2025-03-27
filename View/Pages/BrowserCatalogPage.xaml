@@ -8,7 +8,7 @@
       d:DesignHeight="800" d:DesignWidth="1580"
       Title="Просмотр каталога">
 
-    <Grid Background="white">
+    <Grid  Background="white">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="10"/>
@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <!--#region Панель поиска-->
-        <Grid Grid.Column="0">
+        <Grid  Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="20"/>
@@ -52,14 +52,14 @@
         </Grid>
         <!--#endregion-->
 
-        <Grid Grid.Column="2">
+            <!--#region Результаты поиска-->
+        <Grid Name="SearchResultsGrid" Visibility="Hidden" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="15"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <!--#region Результаты поиска-->
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
@@ -68,7 +68,7 @@
                     <RowDefinition Height="5"/>
                 </Grid.RowDefinitions>
 
-                <ListView Name="BookAuthorLv">
+                <ListView Name="BookAuthorLv" >
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Название книги" DisplayMemberBinding = "{Binding Title}"/>
