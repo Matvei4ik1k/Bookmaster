@@ -2,6 +2,7 @@
 using Bookmaster.Model;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Bookmaster.View.Pages
@@ -25,17 +26,20 @@ namespace Bookmaster.View.Pages
         {
             if (string.IsNullOrWhiteSpace(SearchByBookTitleTb.Text) && string.IsNullOrWhiteSpace(SearchByBookTitleTb.Text))
             {
-                BookAuthorLv.ItemsSource = _books;
-
+                _booksPagination = new PaginationService(_books);
+                BookAuthorLv.ItemsSource = _booksPagination.CurrentPageOfBooks;
             }
             else
             {
-                BookAuthorLv.ItemsSource = _books.Where(book =>
+                List<Book> SearchResults = _books.Where(book =>
                            book.Title.ToLower().Contains(SearchByBookTitleTb.Text.ToLower()) &&
-                           book.Authors.ToLower().Contains(SearchByAuthorNameTb.Text.ToLower()));
+                           book.Authors.ToLower().Contains(SearchByAuthorNameTb.Text.ToLower())).ToList();
+                _booksPagination = new PaginationService(SearchResults);
+
             }
+            BookAuthorLv.ItemsSource = _booksPagination.CurrentPageOfBooks;
 
-
+            SearchResultsGrid.Visibility = Visibility.Visible;
         }
     }
 }
