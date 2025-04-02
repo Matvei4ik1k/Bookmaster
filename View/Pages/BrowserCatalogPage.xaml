@@ -104,8 +104,8 @@
                     <Button Name="NextBookBtn" Grid.Column="6" Content="&gt;"
                             Click="NextBookBtn_Click"/>
 
-                    <TextBlock Name="TotalPagesTbl" Grid.Column="8"/>
-                    <TextBlock Name="TotalBooksTbl" Grid.Column="12"/>
+                    <TextBlock Name="TotalPagesTbl" Grid.Column="8" Text="{Binding TotalPages, StringFormat=из {0}}"/>
+                    <TextBlock Name="TotalBooksTbl" Grid.Column="12" Text="{Binding BooksCount,StringFormat=Книг найдено: {0}}"/>
                 </Grid>
             </Grid>
             <!--#endregion-->
