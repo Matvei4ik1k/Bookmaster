@@ -52,7 +52,7 @@
         </Grid>
         <!--#endregion-->
 
-            <!--#region Результаты поиска-->
+        <!--#region Результаты поиска-->
         <Grid Name="SearchResultsGrid" Visibility="Hidden" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
@@ -76,9 +76,40 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Страница"/>
+
+                    <Button Name="PreviousBookBtn" Grid.Column="2" Content="&lt;"
+                            Click="PreviousBookBtn_Click"/>
+
+                    <TextBox Name="CurrentPageTb" Grid.Column="4" HorizontalContentAlignment="Center" TextChanged="CurrentPageTb_TextChanged"/>
+
+                    <Button Name="NextBookBtn" Grid.Column="6" Content="&gt;"
+                            Click="NextBookBtn_Click"/>
+
+                    <TextBlock Name="TotalPagesTbl" Grid.Column="8"/>
+                    <TextBlock Name="TotalBooksTbl" Grid.Column="12"/>
+                </Grid>
             </Grid>
             <!--#endregion-->
-            
+
         </Grid>
     </Grid>
 </Page>

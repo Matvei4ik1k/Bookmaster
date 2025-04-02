@@ -14,7 +14,7 @@ namespace Bookmaster.AppData
 
         // Определяем свойства для вычисления и хранения данных
         public int BooksCount => _books.Count;
-        public int TotalPages => BooksCount + PAGE_SIZE - 1;
+        public int TotalPages => (BooksCount + PAGE_SIZE - 1) / PAGE_SIZE;
         public List<Book> CurrentPageOfBooks => _books.Skip(_currentPageIndex * PAGE_SIZE).Take(PAGE_SIZE).ToList();
 
         // Определяем конструктор класса для создания объекта. В конструктор передаем полный список книг

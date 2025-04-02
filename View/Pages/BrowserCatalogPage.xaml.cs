@@ -39,7 +39,25 @@ namespace Bookmaster.View.Pages
             }
             BookAuthorLv.ItemsSource = _booksPagination.CurrentPageOfBooks;
 
+            TotalPagesTbl.Text = _booksPagination.TotalPages.ToString();
+            TotalBooksTbl.Text = _booksPagination.BooksCount.ToString();
+
             SearchResultsGrid.Visibility = Visibility.Visible;
+        }
+
+        private void PreviousBookBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CurrentPageTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void NextBookBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
