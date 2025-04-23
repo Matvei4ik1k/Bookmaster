@@ -53,7 +53,7 @@
         <!--#endregion-->
 
         <!--#region Результаты поиска-->
-        <Grid Name="SearchResultsGrid" Visibility="Hidden" Grid.Column="2">
+        <Grid Name="SearchResultsGrid" Visibility="Visible" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="15"/>
@@ -99,7 +99,7 @@
                     <Button Name="PreviousBookBtn" Grid.Column="2" Content="&lt;"
                             Click="PreviousBookBtn_Click"/>
 
-                    <TextBox Name="CurrentPageTb" Grid.Column="4" HorizontalContentAlignment="Center" TextChanged="CurrentPageTb_TextChanged"/>
+                    <TextBox Text="0" Name="CurrentPageTb" Grid.Column="4" HorizontalContentAlignment="Center" TextChanged="CurrentPageTb_TextChanged"/>
 
                     <Button Name="NextBookBtn" Grid.Column="6" Content="&gt;"
                             Click="NextBookBtn_Click"/>
@@ -108,6 +108,69 @@
                     <TextBlock Name="TotalBooksTbl" Grid.Column="12" Text="{Binding BooksCount,StringFormat=Книг найдено: {0}}"/>
                 </Grid>
             </Grid>
+            
+            
+            <!--#region Подробная информация о книге-->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Кейс батл" FontSize="30" FontWeight="SemiBold"/>
+                    <TextBlock Grid.Row="2" Text="Книга про успешное открытие кейсов"/>
+                    <TextBlock Grid.Row="4" Text="Кирьян кирилл, Кузя из универа, Кузя лакомкин, Нуров Никита и пер4ик через 4"/>
+                    <TextBlock Grid.Row="6" Text="Год публикации: 2025"/>
+                    <TextBlock Grid.Row="8" Text="Описание" FontWeight="SemiBold"/>
+                    <TextBlock Grid.Row="10" Text="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"/>
+
+                    <TextBlock Grid.Row="12" Text="Жанры" FontWeight="SemiBold"/>
+
+
+                    <TextBlock Grid.Row="14" Text="Биография, документальная история, драма" />
+                </Grid>
+                
+                <Grid Grid.Column="2" Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image Grid.ColumnSpan="3" Source="/Resousces/Images/booklogo.jpg" />
+                    <Button Grid.Row="2" Content="&lt;"/>
+                    <Button Grid.Row="2" Grid.Column="2" Content="&gt;"/>
+                </Grid>
+                
+            </Grid>
+            <!--#endregion-->
+            
+            
             <!--#endregion-->
 
         </Grid>

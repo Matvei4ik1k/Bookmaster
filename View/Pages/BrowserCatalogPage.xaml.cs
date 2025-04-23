@@ -20,6 +20,7 @@ namespace Bookmaster.View.Pages
         public BrowserCatalogPage()
         {
             InitializeComponent();
+            BookAuthorLv.ItemsSource = _books;
         }
 
         private void SearchBtn_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -38,25 +39,36 @@ namespace Bookmaster.View.Pages
 
             }
             BookAuthorLv.ItemsSource = _booksPagination.CurrentPageOfBooks;
-
+            CurrentPageTb.Text = _booksPagination.CurrentPageNumber.ToString();
             TotalPagesTbl.DataContext = TotalBooksTbl.DataContext = _booksPagination;
+            _booksPagination.UpdatePaginationButtons(NextBookBtn, PreviousBookBtn);
 
             SearchResultsGrid.Visibility = Visibility.Visible;
         }
 
         private void PreviousBookBtn_Click(object sender, RoutedEventArgs e)
         {
+            BookAuthorLv.ItemsSource = _booksPagination.PreviousPage();
+            _booksPagination.UpdatePaginationButtons(NextBookBtn, PreviousBookBtn);
+            CurrentPageTb.Text = _booksPagination.CurrentPageNumber.ToString();
 
         }
 
-        private void CurrentPageTb_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         private void NextBookBtn_Click(object sender, RoutedEventArgs e)
         {
+            BookAuthorLv.ItemsSource = _booksPagination.NextPage();
+            _booksPagination.UpdatePaginationButtons(NextBookBtn, PreviousBookBtn);
+            CurrentPageTb.Text = _booksPagination.CurrentPageNumber.ToString();
 
+        }
+        private void CurrentPageTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (int.TryParse(CurrentPageTb.Text, out int pageNumber) && pageNumber >= 1 && pageNumber <= _booksPagination.TotalPages)
+            {
+                BookAuthorLv.ItemsSource = _booksPagination.SetCurrentPage(pageNumber);
+                _booksPagination.UpdatePaginationButtons(NextBookBtn, PreviousBookBtn);
+            }
         }
     }
 }
