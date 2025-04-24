@@ -20,7 +20,7 @@ namespace Bookmaster.View.Pages
         public BrowserCatalogPage()
         {
             InitializeComponent();
-            BookAuthorLv.ItemsSource = _books;
+            // BookAuthorLv.ItemsSource = _books;
         }
 
         private void SearchBtn_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -28,7 +28,7 @@ namespace Bookmaster.View.Pages
             if (string.IsNullOrWhiteSpace(SearchByBookTitleTb.Text) && string.IsNullOrWhiteSpace(SearchByBookTitleTb.Text))
             {
                 _booksPagination = new PaginationService(_books);
-                BookAuthorLv.ItemsSource = _booksPagination.CurrentPageOfBooks;
+                // BookAuthorLv.ItemsSource = _booksPagination.CurrentPageOfBooks;
             }
             else
             {
@@ -57,6 +57,7 @@ namespace Bookmaster.View.Pages
 
         private void NextBookBtn_Click(object sender, RoutedEventArgs e)
         {
+
             BookAuthorLv.ItemsSource = _booksPagination.NextPage();
             _booksPagination.UpdatePaginationButtons(NextBookBtn, PreviousBookBtn);
             CurrentPageTb.Text = _booksPagination.CurrentPageNumber.ToString();
@@ -69,6 +70,12 @@ namespace Bookmaster.View.Pages
                 BookAuthorLv.ItemsSource = _booksPagination.SetCurrentPage(pageNumber);
                 _booksPagination.UpdatePaginationButtons(NextBookBtn, PreviousBookBtn);
             }
+        }
+
+        private void BookAuthorLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Book selectedBook = BookAuthorLv.SelectedItem as Book;
+            BookDetailsGrid.DataContext = selectedBook;
         }
     }
 }

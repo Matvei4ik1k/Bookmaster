@@ -68,7 +68,7 @@
                     <RowDefinition Height="5"/>
                 </Grid.RowDefinitions>
 
-                <ListView Name="BookAuthorLv" >
+                <ListView Name="BookAuthorLv" SelectionChanged="BookAuthorLv_SelectionChanged">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Название книги" DisplayMemberBinding = "{Binding Title}"/>
@@ -99,7 +99,7 @@
                     <Button Name="PreviousBookBtn" Grid.Column="2" Content="&lt;"
                             Click="PreviousBookBtn_Click"/>
 
-                    <TextBox Text="0" Name="CurrentPageTb" Grid.Column="4" HorizontalContentAlignment="Center" TextChanged="CurrentPageTb_TextChanged"/>
+                    <TextBox  Name="CurrentPageTb" Grid.Column="4" HorizontalContentAlignment="Center" TextChanged="CurrentPageTb_TextChanged"/>
 
                     <Button Name="NextBookBtn" Grid.Column="6" Content="&gt;"
                             Click="NextBookBtn_Click"/>
@@ -111,14 +111,14 @@
             
             
             <!--#region Подробная информация о книге-->
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="2" Name="BookDetailsGrid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition Width="300"/>
                 </Grid.ColumnDefinitions>
 
-                <Grid>
+                <Grid >
                     <Grid.RowDefinitions >
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="10"/>
@@ -137,17 +137,17 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Кейс батл" FontSize="30" FontWeight="SemiBold"/>
-                    <TextBlock Grid.Row="2" Text="Книга про успешное открытие кейсов"/>
-                    <TextBlock Grid.Row="4" Text="Кирьян кирилл, Кузя из универа, Кузя лакомкин, Нуров Никита и пер4ик через 4"/>
-                    <TextBlock Grid.Row="6" Text="Год публикации: 2025"/>
+                    <TextBlock  Text="{Binding Title}" FontSize="30" FontWeight="SemiBold"/>
+                    <TextBlock Grid.Row="2" Text="{Binding Subtitle}" />
+                    <TextBlock Grid.Row="4" Text="{Binding Authors}" />
+                    <TextBlock Grid.Row="6" Text="{Binding FirstPublishdate}"/>
                     <TextBlock Grid.Row="8" Text="Описание" FontWeight="SemiBold"/>
-                    <TextBlock Grid.Row="10" Text="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"/>
+                    <TextBlock Grid.Row="10" Text="{Binding Description}"/>
 
-                    <TextBlock Grid.Row="12" Text="Жанры" FontWeight="SemiBold"/>
+                    <TextBlock Grid.Row="12" FontWeight="SemiBold"/>
 
 
-                    <TextBlock Grid.Row="14" Text="Биография, документальная история, драма" />
+                    <TextBlock Grid.Row="14" Text="{Binding}"  />
                 </Grid>
                 
                 <Grid Grid.Column="2" Margin="20">
