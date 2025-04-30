@@ -1,5 +1,6 @@
 ﻿using Bookmaster.AppData;
 using Bookmaster.Model;
+using Bookmaster.View.Windows;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -76,6 +77,12 @@ namespace Bookmaster.View.Pages
         {
             Book selectedBook = BookAuthorLv.SelectedItem as Book;
             BookDetailsGrid.DataContext = selectedBook;
+        }
+
+        private void AuthorDetailHl_Click(object sender, RoutedEventArgs e)
+        {
+            BookAuthorsDetailsWindow bookAuthorsDetailsWindow = new BookAuthorsDetailsWindow();
+            bookAuthorsDetailsWindow.ShowDialog();
         }
     }
 }
