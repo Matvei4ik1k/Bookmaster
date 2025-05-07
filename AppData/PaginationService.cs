@@ -1,15 +1,14 @@
-﻿using Bookmaster.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
 
 namespace Bookmaster.AppData
 {
-    public class PaginationService
+    public class PaginationService<T>
     {
         // Определяем поля для хранения данных
         private const int PAGE_SIZE = 50;
-        private readonly List<Book> _books;
+        private readonly List<T> _items;
         private int _currentPageIndex = 0;
         private int _currentPageNumber = 1;
 
@@ -26,34 +25,34 @@ namespace Bookmaster.AppData
                 _currentPageIndex = value - 1;
             }
         }
-        public int BooksCount => _books.Count;
+        public int BooksCount => _items.Count;
         public int TotalPages => (BooksCount + PAGE_SIZE - 1) / PAGE_SIZE;
-        public List<Book> CurrentPageOfBooks => _books.Skip(_currentPageIndex * PAGE_SIZE).Take(PAGE_SIZE).ToList();
+        public List<T> CurrentPageOfItems => _items.Skip(_currentPageIndex * PAGE_SIZE).Take(PAGE_SIZE).ToList();
 
         // Определяем конструктор класса для создания объекта. В конструктор передаем полный список книг
 
-        public PaginationService(List<Book> books)
+        public PaginationService(List<T> items)
         {
-            _books = books;
+            _items = items;
         }
 
         // Определяем методы класса для реализации действий объекта.
-        public List<Book> NextPage()
+        public List<T> NextPage()
         {
             if (_currentPageIndex < TotalPages - 1)
             {
                 _currentPageIndex++;
             }
-            return CurrentPageOfBooks;
+            return CurrentPageOfItems;
 
         }
-        public List<Book> PreviousPage()
+        public List<T> PreviousPage()
         {
             if (_currentPageIndex > 0)
             {
                 _currentPageIndex--;
             }
-            return CurrentPageOfBooks;
+            return CurrentPageOfItems;
         }
 
         public void UpdatePaginationButtons(Button nextBtn, Button previousBtn)
@@ -62,10 +61,10 @@ namespace Bookmaster.AppData
             previousBtn.IsEnabled = _currentPageIndex > 0;
         }
 
-        public List<Book> SetCurrentPage(int pageNumber)
+        public List<T> SetCurrentPage(int pageNumber)
         {
             CurrentPageNumber = pageNumber;
-            return CurrentPageOfBooks;
+            return CurrentPageOfItems;
         }
     }
 }
