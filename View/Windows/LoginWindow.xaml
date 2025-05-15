@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bookmaster.View.Windows"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="LoginWindow" Height="400" Width="1000">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition/>
+           
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock FontSize="20" Grid.Column="0"  Grid.Row="1" Text="Имя пользователя"/>
+        <TextBlock Grid.Column="0"  Grid.Row="3" Text="Пароль"/>
+
+        <TextBox Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" />
+        <PasswordBox Grid.Column="2"  Grid.Row="3" Grid.ColumnSpan="3"/>
+
+        <Button Grid.Column="2" Grid.Row="5" Content="Вход"/>
+        <Button Grid.Column="4" Grid.Row="5" Content="Отмена"/>
     </Grid>
 </Window>
