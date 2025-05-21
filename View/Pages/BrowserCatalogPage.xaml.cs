@@ -82,7 +82,9 @@ namespace Bookmaster.View.Pages
 
         private void AuthorDetailHl_Click(object sender, RoutedEventArgs e)
         {
-            BookAuthorsDetailsWindow bookAuthorsDetailsWindow = new BookAuthorsDetailsWindow();
+            Book selectedBook = BookAuthorLv.SelectedItem as Book;
+
+            BookAuthorsDetailsWindow bookAuthorsDetailsWindow = new BookAuthorsDetailsWindow(selectedBook);
             bookAuthorsDetailsWindow.ShowDialog();
         }
     }
