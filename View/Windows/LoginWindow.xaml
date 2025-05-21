@@ -27,8 +27,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock FontSize="20" Grid.Column="0"  Grid.Row="1" Text="Имя пользователя"/>
-        <TextBlock Grid.Column="0"  Grid.Row="3" Text="Пароль"/>
+        <TextBlock FontSize="20" TextAlignment="Center" Grid.Column="0"  Grid.Row="1" Text="Имя пользователя"/>
+        <TextBlock TextAlignment="Center" Grid.Column="0"  Grid.Row="3" Text="Пароль"/>
 
         <TextBox Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" />
         <PasswordBox Grid.Column="2"  Grid.Row="3" Grid.ColumnSpan="3"/>

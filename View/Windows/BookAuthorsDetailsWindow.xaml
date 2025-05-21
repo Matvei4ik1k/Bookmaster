@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bookmaster.View.Windows"
         mc:Ignorable="d"
-        Title="BookAuthorsDetailsWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="BookAuthorsDetailsWindow" WindowStartupLocation="CenterScreen" SizeToContent="Height" ResizeMode="NoResize" Width="450">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <ComboBox Name="AuthorsCmb" DisplayMemberPath="Author.Name" SelectedIndex="0"
+                  SelectionChanged="AuthorsCmb_SelectionChanged"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="{Binding Author.BirthDate, StringFormat=d MMMM yyyy, ConverterCulture=ru-RU}"/>
+            <TextBlock Text=" - "/>
+            <TextBlock Text="{Binding Author.DeathDate, StringFormat=d MMMM yyyy, ConverterCulture=ru-RU}"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="4" Text="Биография" FontWeight="SemiBold"/>
+
+        <ScrollViewer Grid.Row="6">
+            <TextBlock VerticalAlignment="Top" Text="{Binding Author.Bio}"/>
+        </ScrollViewer>
+
+        <TextBlock Name="OpenWikipediaTbl" Grid.Row="8">
+            <Hyperlink Name="OpenWikipediaHl" NavigateUri="{Binding Author.Wikipedia}" RequestNavigate="OpenWikipediaHl_RequestNavigate">
+                Открыть в Wikipedia
+            </Hyperlink>
+        </TextBlock>
+
+        <Button Name="CloseBtn" Grid.Row="10" Content="Закрыть" HorizontalAlignment="Left" Click="CloseBtn_Click"/>
     </Grid>
 </Window>
