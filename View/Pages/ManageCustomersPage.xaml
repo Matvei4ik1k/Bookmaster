@@ -5,10 +5,56 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Bookmaster.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="1580"
       Title="ManageCustomersPage">
 
-    <Grid Background="red">
-        
+    <Grid Background="white">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="ID покупателя"/>
+            <TextBox Grid.Column="1"  Grid.Row="2" />
+
+            <TextBlock Grid.Column="1" Grid.Row="5" Text="Имя"/>
+            <TextBox Grid.Column="1"  Grid.Row="6" />
+
+            <Button Grid.Row="8" Grid.Column="1" Content="Поиск"  />
+            <Button  Grid.Row="10" Grid.Column="1" HorizontalAlignment="Left" Width="200" Content="Редактировать" />
+            <Button Name="AddBtn" Grid.Row="10" Grid.Column="1" HorizontalAlignment="Right" Width="170" Content="Добавить" Click="AddBtn_Click" />
+        </Grid>
+
+        <ListView Grid.Column="3">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding = "{Binding ID}"/>
+                    <GridViewColumn Header="Имя" DisplayMemberBinding = "{Binding Name}"/>
+                    <GridViewColumn Header="Адрес" DisplayMemberBinding = "{Binding Address}" />
+                    <GridViewColumn Header="Почт. индекс"  DisplayMemberBinding = "{Binding Zip}"/>
+                    <GridViewColumn Header="Город" DisplayMemberBinding = "{Binding City}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Page>
