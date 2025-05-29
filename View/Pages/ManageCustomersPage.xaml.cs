@@ -12,6 +12,7 @@ namespace Bookmaster.View.Pages
     public partial class ManageCustomersPage : Page
     {
         List<Customer> _customer = App.context.Customer.ToList();
+
         public ManageCustomersPage()
         {
             InitializeComponent();
@@ -29,6 +30,15 @@ namespace Bookmaster.View.Pages
             {
                 CustomersLv.ItemsSource = _customer;
             }
+            else
+            {
+                List<Customer> SearchResults = _customer.Where(customer =>
+                           customer.Id.ToLower().Contains(SearchIDTb.Text.ToLower()) &&
+                           customer.Name.ToLower().Contains(SearchNameTb.Text.ToLower())).ToList();
+                CustomersLv.ItemsSource = SearchResults;
+            }
         }
     }
 }
+
+
