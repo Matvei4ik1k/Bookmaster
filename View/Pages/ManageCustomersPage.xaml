@@ -47,11 +47,11 @@
         <ListView Name="CustomersLv" Grid.Column="3">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" DisplayMemberBinding = "{Binding ID}"/>
+                    <GridViewColumn  Header="ID" DisplayMemberBinding = "{Binding Id}"/>
                     <GridViewColumn Header="Имя" DisplayMemberBinding = "{Binding Name}"/>
                     <GridViewColumn Header="Адрес" DisplayMemberBinding = "{Binding Address}" />
                     <GridViewColumn Header="Почт. индекс"  DisplayMemberBinding = "{Binding Zip}"/>
-                    <GridViewColumn Header="Город" DisplayMemberBinding = "{Binding City}"/>
+                    <GridViewColumn Header="Город" DisplayMemberBinding = "{Binding City.Name}"/>
                 </GridView>
             </ListView.View>
         </ListView>

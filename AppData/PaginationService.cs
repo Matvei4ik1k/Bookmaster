@@ -44,7 +44,6 @@ namespace Bookmaster.AppData
                 _currentPageIndex++;
             }
             return CurrentPageOfItems;
-
         }
         public List<T> PreviousPage()
         {
