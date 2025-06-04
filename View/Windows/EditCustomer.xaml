@@ -5,32 +5,80 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bookmaster.View.Windows"
         mc:Ignorable="d"
-        Title="EditCustomer" Height="450" Width="800">
-    <Grid Background="White">
+        Title="EditCustomer" Height="450" Width="1000">
+    <Grid Background="White" Margin="30">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.6*"/>
+            <ColumnDefinition Width="1.2*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30"/>
-                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition Width="0"/>
+                <ColumnDefinition Width="0.6*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="30"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="10"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="10"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="10"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Id"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="Имя"/>
+            <TextBlock Grid.Column="1" Grid.Row="5" Text="Адрес"/>
+            <TextBlock Grid.Column="1" Grid.Row="7" Text="Индекс / город"/>
+
+            <TextBox Grid.Column="2" Grid.Row="1" />
+            <TextBox Grid.Column="2" Grid.Row="3" />
+            <TextBox Grid.Column="2" Grid.Row="5" />
+            <TextBox Grid.Column="2" Grid.Row="7" Width="180" HorizontalAlignment="Right"  />
+            <TextBox Grid.Column="2" Grid.Row="7" Width="130" HorizontalAlignment="Left" />
+
+
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35"/>
+                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition/>
+                
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="40"/>
+                
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="Телефон"/>
+            <TextBlock Grid.Column="1" Grid.Row="5" Text="Почта"/>
+
+            <TextBox Grid.Column="2" Grid.Row="3" />
+            <TextBox Grid.Column="2" Grid.Row="5" />
+
+            <Button Grid.Column="1" Content="Сохранить"  Height="30" Grid.Row="11"  FontSize="4" />
+            <Button Grid.Column="2"  Content="Отменить"  Width="150" Height="30"  Grid.Row="11"/>
+
         </Grid>
     </Grid>
 </Window>
