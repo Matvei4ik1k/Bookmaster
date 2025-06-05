@@ -27,7 +27,7 @@ namespace Bookmaster.View.Pages
 
         private void SearchBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(SearchByBookTitleTb.Text) && string.IsNullOrWhiteSpace(SearchByBookTitleTb.Text))
+            if (string.IsNullOrWhiteSpace(SearchByAuthorNameTb.Text) && string.IsNullOrWhiteSpace(SearchByBookTitleTb.Text))
             {
                 _itemsPagination = new PaginationService<Book>(_books);
                 // BookAuthorLv.ItemsSource = _booksPagination.CurrentPageOfBooks;
@@ -53,17 +53,14 @@ namespace Bookmaster.View.Pages
             BookAuthorLv.ItemsSource = _itemsPagination.PreviousPage();
             _itemsPagination.UpdatePaginationButtons(NextBookBtn, PreviousBookBtn);
             CurrentPageTb.Text = _itemsPagination.CurrentPageNumber.ToString();
-
         }
 
 
         private void NextBookBtn_Click(object sender, RoutedEventArgs e)
         {
-
             BookAuthorLv.ItemsSource = _itemsPagination.NextPage();
             _itemsPagination.UpdatePaginationButtons(NextBookBtn, PreviousBookBtn);
             CurrentPageTb.Text = _itemsPagination.CurrentPageNumber.ToString();
-
         }
         private void CurrentPageTb_TextChanged(object sender, TextChangedEventArgs e)
         {
